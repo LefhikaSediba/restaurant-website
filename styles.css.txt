@@ -39,7 +39,7 @@ main img {
     margin: 20px 0;
 }
 footer {
-    background-color: #333;
+    background-color: #d49090;
     color: white;
     text-align: center;
     padding: 10px;
@@ -52,7 +52,7 @@ p {
 }
 
 a {
-    color: #4e7c88;
+    color: #323e41;
     text-decoration: none;
 }
 
@@ -60,11 +60,11 @@ a:hover {
     text-decoration: underline;
 }
 img {
-    border: 5px solid #2e2555;
+    border: 5px solid #161030;
     border-radius: 10px;
 }
 main a[href^="mailto:"] {
-    color: #837976;
+    color: #2d130b;
     font-weight: bold;
 }
 

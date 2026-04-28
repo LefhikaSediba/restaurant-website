@@ -1,41 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback - FreshBite</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
 <header>
-    <h1>FreshBite Restaurant</h1>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">FreshBite Restaurant</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto"> <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feedback.html">Feedback</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="menu.html">Menu</a>
-    <a href="contact.html">Contact</a>
-    <a href="feedback.html">Feedback</a>
-</nav>
+    <main class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <section class="card shadow-sm p-4">
+                <h2 class="text-center mb-4">We Value Your Feedback</h2>
+                <p class="text-muted text-center">Let us know how your experience at FreshBite Restaurant was.</p>
+                
+                <form id="feedbackForm">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                    </div>
 
-<main>
-    <section>
-        <h2>Customer Feedback</h2>
+                    <div class="mb-3">
+                        <label for="emailAddr" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="emailAddr" placeholder="name@example.com" required>
+                    </div>
 
-        <form>
-            <label>Name:</label><br>
-            <input type="text" required><br><br>
+                    <div class="mb-3">
+                        <label for="visitDate" class="form-label">Date of Visit</label>
+                        <input type="date" class="form-control" id="visitDate" required>
+                    </div>
 
-            <label>Email:</label><br>
-            <input type="email" required><br><br>
+                    <div class="mb-3">
+                        <label for="rating" class="form-label">Overall Rating</label>
+                        <select class="form-select" id="rating" required>
+                            <option value="">Choose a rating...</option>
+                            <option value="5">5 - Excellent</option>
+                            <option value="4">4 - Very Good</option>
+                            <option value="3">3 - Average</option>
+                            <option value="2">2 - Poor</option>
+                            <option value="1">1 - Terrible</option>
+                        </select>
+                    </div>
 
-            <label>Message:</label><br>
-            <textarea required></textarea><br><br>
+                    <div class="mb-3">
+                        <label for="comments" class="form-label">Comments</label>
+                        <textarea class="form-control" id="comments" rows="4" placeholder="Tell us more about your visit..." required></textarea>
+                    </div>
 
-            <button type="submit">Submit</button>
-        </form>
-
-    </section>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-dark">Submit Feedback</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
 </main>
 
 <footer>

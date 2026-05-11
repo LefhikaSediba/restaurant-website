@@ -1,22 +1,22 @@
-// 1. Function: This fulfills the 'functions' requirement
-function handleOrder(foodName) {
-    // 2. DOM Manipulation: Selecting the message area and changing its content
-    const displayArea = document.getElementById('order-status');
-    displayArea.innerHTML = `<div class="alert alert-success">Added <strong>${foodName}</strong> to your order!</div>`;
-    
-    // Auto-hide the message after 3 seconds
-    setTimeout(() => { displayArea.innerHTML = ''; }, 3000);
-}
-
-// 3. Event Handling: Attaching clicks to all your 'Order Now' buttons
 document.addEventListener('DOMContentLoaded', () => {
+    const statusArea = document.getElementById('order-status');
     const buttons = document.querySelectorAll('.order-btn');
-    
-    buttons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Finding the specific dish name from the card
-            const dish = this.closest('.menu-card').querySelector('h3').innerText;
-            handleOrder(dish);
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Find the name of the food in the card where the button was clicked
+            const foodName = this.parentElement.querySelector('h5').innerText;
+            
+            // DOM Manipulation: Injecting a Bootstrap alert message
+            statusArea.innerHTML = `
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success!</strong> ${foodName} has been added to your order.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+            
+            // Optional: Scroll back to the message so the user sees it
+            statusArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
     });
 });

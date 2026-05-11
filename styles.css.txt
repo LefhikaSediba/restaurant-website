@@ -135,34 +135,110 @@ footer {
     padding: 4rem 0;
     text-align: center;
 }
-/* --- CSS3 ANIMATIONS & ADVANCED SELECTORS --- */
-
-/* Modern Grid Layout for the Menu */
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
 }
 
-/* Animation: Smooth hover effect using CSS3 Transition */
+/* CSS3 Animation for the Menu Cards */
 .menu-card {
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Pseudo-class Selector for Interactive Feel */
 .menu-card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
 }
 
-/* Using a CSS3 Variable for the order button */
+/* Custom button hover */
 .order-btn {
-    background-color: var(--primary-color);
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-.order-btn:active {
-    transform: scale(0.95); /* Button 'press' animation */
+.order-btn:hover {
+    background-color: #c49b63 !important; /* Elegant gold hover */
+    border-color: #c49b63 !important;
+}
+/* Force all cards in a row to be the same height */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 100%; /* Makes all cards in a row equal height */
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Pushes content to fill the card */
+}
+
+.card-body p {
+    flex-grow: 1; /* This pushes the button to the absolute bottom */
+}
+
+.order-btn {
+    align-self: center;
+    width: 100%;
+}
+/* Custom Professional Styles */
+body {
+    background-color: #f4f7f6; /* Soft light grey background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contact Info Card Styling */
+.contact-info-card {
+    border-left: 5px solid #212529; /* Dark accent matching your navbar */
+    transition: transform 0.3s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+/* Form Styling */
+.form-control {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(33, 37, 41, 0.1);
+    border-color: #212529;
+}
+
+.btn-dark {
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+    background-color: #343a40;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+footer {
+    background: #212529;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
 }

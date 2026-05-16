@@ -4,106 +4,751 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FreshBite Restaurant</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Font for better "Presentation Layer" marks -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">FreshBite Restaurant</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <div class="container my-5">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h2 class="mb-3">Welcome to FreshBite Restaurant</h2>
-                    <p>Enjoy delicious burgers, pizza, pasta and grilled steak made with fresh ingredients.</p>
-                    <img src="images/restaurant.jpg" class="img-fluid rounded shadow" alt="Restaurant Interior">
-                </div>
-                <div class="col-md-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Today's Special</h5>
-                            <p class="card-text">Try our famous grilled steak with fresh vegetables.</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:'Poppins', sans-serif;
+            background:#fcfbfa;
+            color:#222;
+            overflow-x:hidden;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar{
+            background:rgba(0,0,0,0.75) !important;
+            backdrop-filter:blur(10px);
+            padding:15px 0;
+        }
+
+        .navbar-brand{
+            font-size:1.8rem;
+            font-weight:700;
+            color:white !important;
+        }
+
+        .navbar-brand span{
+            color:#c5a880;
+        }
+
+        .nav-link{
+            color:#d8d8d8 !important;
+            margin-left:15px;
+            position:relative;
+            transition:0.3s ease;
+        }
+
+        .nav-link::after{
+            content:'';
+            position:absolute;
+            left:0;
+            bottom:-5px;
+            width:0%;
+            height:2px;
+            background:#c5a880;
+            transition:0.3s ease;
+        }
+
+        .nav-link:hover::after{
+            width:100%;
+        }
+
+        .nav-link:hover{
+            color:white !important;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero{
+            height:100vh;
+
+            background:
+            linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url('images/restaurant.jpg');
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            text-align:center;
+            color:white;
+        }
+
+        .hero-content{
+            max-width:800px;
+            padding:20px;
+        }
+
+        .hero h1{
+            font-size:4rem;
+            font-weight:700;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:1.2rem;
+            margin-bottom:35px;
+            color:#e5e5e5;
+        }
+
+        .hero-buttons{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .btn-gold{
+            background:#c5a880;
+            color:white;
+            padding:14px 35px;
+            border:none;
+            border-radius:6px;
+            font-weight:600;
+            transition:0.3s ease;
+        }
+
+        .btn-gold:hover{
+            background:#ad8d63;
+            transform:translateY(-3px);
+            color:white;
+        }
+
+        /* =========================
+           FEATURES SECTION
+        ========================== */
+
+        .features{
+            padding:100px 20px;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:60px;
+        }
+
+        .section-title h2{
+            font-size:2.8rem;
+            font-weight:700;
+            margin-bottom:15px;
+        }
+
+        .section-title p{
+            color:#777;
+        }
+
+        .feature-box{
+            background:white;
+            padding:40px 30px;
+            border-radius:18px;
+            text-align:center;
+            transition:0.4s ease;
+            box-shadow:0 10px 25px rgba(0,0,0,0.05);
+            height:100%;
+        }
+
+        .feature-box:hover{
+            transform:translateY(-10px);
+        }
+
+        .feature-box i{
+            font-size:2.8rem;
+            color:#c5a880;
+            margin-bottom:20px;
+        }
+
+        .feature-box h3{
+            margin-bottom:15px;
+        }
+
+        /* =========================
+           MENU SECTION
+        ========================== */
+
+        .menu-section{
+            padding:100px 20px;
+            background:#f8f5f1;
+        }
+
+        .menu-card{
+            border:none;
+            overflow:hidden;
+            border-radius:18px;
+            transition:0.4s ease;
+            background:white;
+            height:100%;
+        }
+
+        .menu-card img{
+            height:250px;
+            object-fit:cover;
+            transition:0.4s ease;
+        }
+
+        .menu-card:hover img{
+            transform:scale(1.08);
+        }
+
+        .menu-card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .menu-card .card-body{
+            padding:25px;
+        }
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats{
+            padding:100px 20px;
+            background:#111111;
+            color:white;
+        }
+
+        .stat-box{
+            text-align:center;
+        }
+
+        .stat-box h2{
+            font-size:3rem;
+            color:#c5a880;
+            margin-bottom:10px;
+        }
+
+        /* =========================
+           TESTIMONIAL
+        ========================== */
+
+        .testimonial{
+            padding:100px 20px;
+        }
+
+        .testimonial-box{
+            max-width:800px;
+            margin:auto;
+            background:white;
+            padding:50px;
+            border-radius:20px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.05);
+            text-align:center;
+        }
+
+        .testimonial-box p{
+            font-size:1.1rem;
+            color:#666;
+            margin-bottom:20px;
+        }
+
+        .testimonial-box h4{
+            color:#c5a880;
+        }
+
+        /* =========================
+           RESERVATION
+        ========================== */
+
+        .reservation{
+            padding:100px 20px;
+            background:#111111;
+            color:white;
+            text-align:center;
+        }
+
+        .reservation h2{
+            font-size:3rem;
+            margin-bottom:20px;
+        }
+
+        .reservation p{
+            color:#cccccc;
+            margin-bottom:35px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer{
+            background:#0a0a0a;
+            color:#999;
+            text-align:center;
+            padding:30px 20px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media(max-width:768px){
+
+            .hero h1{
+                font-size:2.7rem;
+            }
+
+            .section-title h2,
+            .reservation h2{
+                font-size:2.2rem;
+            }
+
+            .testimonial-box{
+                padding:30px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                Fresh<span>Bite</span>
+            </a>
+
+            <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">
+                            Menu
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">
+                            Feedback
+                        </a>
+                    </li>
+
+                </ul>
+
             </div>
+
         </div>
 
-        <!-- MENU SECTION -->
-        <div class="container my-5">
-            <!-- MOVE THE STATUS DIV HERE so people see the message -->
-            <div id="order-status" class="mt-3"></div>
-            
-            <h2 class="text-center mb-4">Our Menu</h2>
+    </nav>
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Experience Luxury Dining
+            </h1>
+
+            <p>
+                Fresh ingredients, premium meals, unforgettable taste.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="menu.html" class="btn btn-gold">
+                    Explore Menu
+                </a>
+
+                <a href="contact.html" class="btn btn-outline-light px-4 py-3">
+                    Book Table
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section class="features">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Why Choose Us</h2>
+
+                <p>
+                    Premium dining experience with world-class service.
+                </p>
+
+            </div>
 
             <div class="row g-4">
-                <!-- Burger -->
+
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm menu-card">
-                        <img src="images/Burger.jpg" class="card-img-top" alt="Burger">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5>Burger</h5>
-                            <p class="flex-grow-1">Juicy beef burger with cheese</p>
-                            <button class="btn btn-dark order-btn w-100">Order Now</button>
-                        </div>
+
+                    <div class="feature-box">
+
+                        <i class="fas fa-utensils"></i>
+
+                        <h3>Premium Meals</h3>
+
+                        <p>
+                            Freshly prepared dishes made with quality ingredients.
+                        </p>
+
                     </div>
+
                 </div>
 
-                <!-- Pizza -->
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm menu-card">
-                        <img src="images/Pizza.jpeg" class="card-img-top" alt="Pizza">
-                        <div class="card-body text-center">
-                            <h5>Pizza</h5>
-                            <p>Cheesy pizza with toppings</p>
-                            <button class="btn btn-dark order-btn w-100">Order Now</button>
-                        </div>
+
+                    <div class="feature-box">
+
+                        <i class="fas fa-star"></i>
+
+                        <h3>Luxury Experience</h3>
+
+                        <p>
+                            Elegant atmosphere with professional hospitality.
+                        </p>
+
                     </div>
+
                 </div>
 
-                <!-- Pasta -->
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm menu-card">
-                        <img src="images/Pasta.webp" class="card-img-top" alt="Pasta">
-                        <div class="card-body text-center">
-                            <h5>Pasta</h5>
-                            <p>Creamy pasta with herbs</p>
-                            <button class="btn btn-dark order-btn w-100">Order Now</button>
-                        </div>
+
+                    <div class="feature-box">
+
+                        <i class="fas fa-clock"></i>
+
+                        <h3>Fast Service</h3>
+
+                        <p>
+                            Quick and reliable customer service every day.
+                        </p>
+
                     </div>
+
                 </div>
+
             </div>
-        </div>
-    </main>
 
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <p>&copy; 2026 FreshBite Restaurant</p>
+        </div>
+
+    </section>
+
+    <!-- =========================
+         MENU SECTION
+    ========================== -->
+
+    <section class="menu-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Popular Menu</h2>
+
+                <p>
+                    Explore our customer favorite meals.
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+
+                <!-- BURGER -->
+
+                <div class="col-md-4">
+
+                    <div class="card menu-card">
+
+                        <img src="images/Burger.jpg"
+                        class="card-img-top"
+                        alt="Burger">
+
+                        <div class="card-body text-center">
+
+                            <h4>Burger</h4>
+
+                            <p>
+                                Juicy beef burger with cheese and fresh vegetables.
+                            </p>
+
+                            <button class="btn btn-dark w-100">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- PIZZA -->
+
+                <div class="col-md-4">
+
+                    <div class="card menu-card">
+
+                        <img src="images/Pizza.jpeg"
+                        class="card-img-top"
+                        alt="Pizza">
+
+                        <div class="card-body text-center">
+
+                            <h4>Pizza</h4>
+
+                            <p>
+                                Stone-baked pizza topped with premium ingredients.
+                            </p>
+
+                            <button class="btn btn-dark w-100">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- PASTA -->
+
+                <div class="col-md-4">
+
+                    <div class="card menu-card">
+
+                        <img src="images/Pasta.webp"
+                        class="card-img-top"
+                        alt="Pasta">
+
+                        <div class="card-body text-center">
+
+                            <h4>Pasta</h4>
+
+                            <p>
+                                Creamy pasta prepared with herbs and rich sauce.
+                            </p>
+
+                            <button class="btn btn-dark w-100">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         STATS SECTION
+    ========================== -->
+
+    <section class="stats">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3">
+
+                    <div class="stat-box">
+
+                        <h2>25K+</h2>
+
+                        <p>Happy Customers</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="stat-box">
+
+                        <h2>7+</h2>
+
+                        <p>Menu Items</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="stat-box">
+
+                        <h2>10+</h2>
+
+                        <p>Years Experience</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <div class="stat-box">
+
+                        <h2>15+</h2>
+
+                        <p>Professional Chefs</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         TESTIMONIAL
+    ========================== -->
+
+    <section class="testimonial">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>Customer Reviews</h2>
+
+                <p>
+                    What our guests say about us.
+                </p>
+
+            </div>
+
+            <div class="testimonial-box">
+
+                <p>
+                    “One of the best restaurant experiences I've ever had.
+                    Amazing food, beautiful atmosphere, and excellent service.”
+                </p>
+
+                <h4>
+                    — Jaden Morgan
+                </h4>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         RESERVATION
+    ========================== -->
+
+    <section class="reservation">
+
+        <div class="container">
+
+            <h2>
+                Reserve Your Table Today
+            </h2>
+
+            <p>
+                Enjoy unforgettable dining moments with friends and family.
+            </p>
+
+            <a href="contact.html" class="btn btn-gold">
+                Book Now
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 FreshBite Restaurant. All Rights Reserved.
+        </p>
+
     </footer>
 
-    <!-- Scripts -->
+    <!-- Bootstrap Script -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+
 </body>
 </html>

@@ -3,126 +3,378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback - FreshBite</title>
-    
+    <title>Contact | FreshBite Restaurant</title>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Poppins', sans-serif;
+            background:#f8f5f1;
+            color:#222;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar{
+            background:#111111 !important;
+            padding:15px 0;
+        }
+
+        .navbar-brand{
+            font-size:1.8rem;
+            font-weight:700;
+            color:white !important;
+        }
+
+        .navbar-brand span{
+            color:#c5a880;
+        }
+
+        .nav-link{
+            color:#d8d8d8 !important;
+            margin-left:15px;
+            position:relative;
+            transition:0.3s ease;
+        }
+
+        .nav-link::after{
+            content:'';
+            position:absolute;
+            left:0;
+            bottom:-5px;
+            width:0%;
+            height:2px;
+            background:#c5a880;
+            transition:0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active{
+            color:white !important;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after{
+            width:100%;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .contact-hero{
+            height:45vh;
+            background:
+            linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url('images/restaurant.jpg');
+
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            text-align:center;
+            color:white;
+        }
+
+        .contact-hero h1{
+            font-size:3.5rem;
+            font-weight:700;
+        }
+
+        .contact-hero p{
+            color:#ddd;
+            font-size:1.1rem;
+        }
+
+        /* =========================
+           CONTACT SECTION
+        ========================== */
+
+        .contact-section{
+            padding:100px 20px;
+        }
+
+        .section-title{
+            text-align:center;
+            margin-bottom:60px;
+        }
+
+        .section-title h2{
+            font-size:2.8rem;
+            font-weight:700;
+        }
+
+        .section-title p{
+            color:#777;
+        }
+
+        /* Contact Card */
+
+        .contact-card{
+            background:white;
+            border-radius:20px;
+            padding:30px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.05);
+            transition:0.3s ease;
+        }
+
+        .contact-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .icon-box{
+            width:40px;
+            height:40px;
+            background:#c5a880;
+            color:white;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            border-radius:50%;
+            font-size:14px;
+        }
+
+        /* FORM */
+
+        .form-control{
+            border-radius:10px;
+            padding:12px;
+        }
+
+        .btn-gold{
+            background:#c5a880;
+            color:white;
+            padding:12px;
+            border:none;
+            width:100%;
+            font-weight:600;
+            border-radius:10px;
+            transition:0.3s ease;
+        }
+
+        .btn-gold:hover{
+            background:#ad8d63;
+            transform:translateY(-2px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer{
+            background:#0a0a0a;
+            color:#999;
+            text-align:center;
+            padding:30px;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px){
+            .contact-hero h1{
+                font-size:2.5rem;
+            }
+        }
+
+    </style>
 
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">FreshBite Restaurant</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="menu.html">Menu</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="feedback.html">Feedback</a>
-                    </li>
-                </ul>
-            </div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="index.html">
+            Fresh<span>Bite</span>
+        </a>
+
+        <button class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="contact.html">Contact</a>
+                </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link active" href="feedback.html">feedback</a>
+                </li>
+
+            </ul>
+
         </div>
-    </nav>
 
-    </header>
-
-<main > 
- <main class="container my-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-10">
-            <!-- Professional Header -->
-            <div class="text-center mb-5">
-                <h2 class="display-4 fw-bold">Get In Touch</h2>
-                <p class="text-muted">Have a question or want to book a table? We'd love to hear from you.</p>
-            </div>
-
-            <div class="row g-5">
-                <!-- Contact Info Cards -->
-                <div class="col-md-5">
-                    <div class="contact-info-card p-4 shadow-sm rounded bg-white h-100">
-                        <h4 class="mb-4">Contact Information</h4>
-                        
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="icon-box me-3">📍</div>
-                            <p class="mb-0">123 Fresh Way, Gaborone, Botswana</p>
-                        </div>
-
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="icon-box me-3">📧</div>
-                            <p class="mb-0">freshbite@gmail.com</p>
-                        </div>
-
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="icon-box me-3">📞</div>
-                            <p class="mb-0">+267 74141993</p>
-                        </div>
-
-                        <!-- Add a simple map placeholder or business hours -->
-                        <div class="mt-auto border-top pt-3">
-                            <h6>Business Hours</h6>
-                            <p class="small text-muted mb-0">Mon - Sat: 09:00 AM - 10:00 PM</p>
-                            <p class="small text-muted">Sun: 10:00 AM - 08:00 PM</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="col-md-7">
-                    <form class="p-4 shadow-sm rounded bg-white">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Your Name</label>
-                                <input type="text" class="form-control" placeholder="John Doe">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Email Address</label>
-                                <input type="email" class="form-control" placeholder="john@example.com">
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Subject</label>
-                                <input type="text" class="form-control" placeholder="Reservation / Feedback">
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Message</label>
-                                <textarea class="form-control" rows="5" placeholder="How can we help you?"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-dark w-100 py-2 mt-2">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
-</main>
-</main>
-    
 
+</nav>
 
+<!-- HERO -->
+<section class="contact-hero">
 
-    <footer>
-        <p>&copy; 2026 FreshBite Restaurant</p>
-    </footer>
-    <!-- Bootstrap JS and dependencies -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <div>
+
+        <h1>Get In Touch</h1>
+
+        <p>We’d love to hear from you</p>
+
+    </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Contact Us</h2>
+
+            <p>Book a table, send feedback, or ask questions anytime</p>
+
+        </div>
+
+        <div class="row g-5">
+
+            <!-- INFO -->
+            <div class="col-md-5">
+
+                <div class="contact-card h-100">
+
+                    <h4 class="mb-4">Information</h4>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-box me-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <p class="mb-0">Gaborone, Botswana</p>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-box me-3">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <p class="mb-0">freshbite@gmail.com</p>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="icon-box me-3">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <p class="mb-0">+267 74141993</p>
+                    </div>
+
+                    <hr>
+
+                    <h6>Business Hours</h6>
+                    <p class="text-muted mb-1">Mon - Sat: 09:00 - 22:00</p>
+                    <p class="text-muted">Sun: 10:00 - 20:00</p>
+
+                </div>
+
+            </div>
+
+            <!-- FORM -->
+            <div class="col-md-7">
+
+                <div class="contact-card">
+
+                    <form>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Email Address">
+                            </div>
+
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+
+                            <div class="col-12">
+                                <textarea class="form-control" rows="6" placeholder="Message"></textarea>
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn-gold">
+                                    Send Message
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 FreshBite Restaurant. All Rights Reserved.</p>
+</footer>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

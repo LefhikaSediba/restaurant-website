@@ -2,18 +2,18 @@
 
 ## Project Description
 
-This project is a simple multi-page website created using **HTML, CSS, and Bootstrap**.
-The website is hosted using **GitHub Pages** and demonstrates the use of Bootstrap components and responsive design.
+This project is a simple multi-page website created using HTML, CSS, and Bootstrap.
+The website is hosted using GitHub Pages and demonstrates the use of Bootstrap components and responsive design.
 
 ## Pages
 
 The website contains the following pages:
 
-* **Home Page** – Introduces the website and displays content using the Bootstrap grid layout.
-* **About Page** – Provides information about the developer and the purpose of the website.
-*   Menu Page
-* **Contact Page** – Displays contact information.
-*   Feedback Page
+* Home Page
+* About Page
+* Menu Page
+* Contact Page
+* Feedback Page
 
 ## Technologies Used
 
@@ -33,7 +33,7 @@ The website contains the following pages:
 
 You can view the live website here:
 
-
+https://lefhikasediba.github.io/restaurant-website/
 
 ## Author
 
